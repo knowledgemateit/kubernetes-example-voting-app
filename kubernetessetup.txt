@@ -15,13 +15,12 @@ Note: Open Required Ports In AWS Security Groups. For now we will open All trafi
 
 ==========COMMON FOR MASTER & WORKERNODES START ====
 
-1) Install packages.To install Kubernetes and containerd run these commands:
+Install packages.To install Kubernetes and containerd run these commands:
 apt update -y
 apt upgrade -y
 apt install apt-transport-https docker.io -y
 
 systemctl start docker 
-systemctl status docker
 
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
@@ -33,7 +32,6 @@ apt update -y
 
 apt install -y kubelet kubeadm  kubectl
   
-Start and enable kubelet service
 systemctl daemon-reload 
 systemctl start kubelet 
 systemctl enable kubelet.service
