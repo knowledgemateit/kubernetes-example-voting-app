@@ -1,14 +1,19 @@
+https://k21academy.com/docker-kubernetes/three-node-kubernetes-cluster/
+
 Kubernetes Setup Using Kubeadm In AWS EC2 Ubuntu Servers Container-D As Runtime
 =======
 
 Prerequisite:
 =============
 
-2 - Ubuntu Serves  > 20.2
+2 - Ubuntu Serves  > 22.04
 
 1 - Master  (4GB RAM , 2 Core) t2.medium
 
 1 - agent  (4GB RAM , 2 Core) t2.medium
+
+https://k21academy.com/docker-kubernetes/three-node-kubernetes-cluster/
+
 
 
 Note: Open Required Ports In AWS Security Groups. For now we will open All trafic.
