@@ -53,7 +53,9 @@ In Master : kubectl get nodes
 
 #You will notice from the previous command, that all the pods are running except one: ‘core-dns’. For resolving this we will install a # pod network. To install the weave pod network, run the following command:
 
-kubectl apply -f https://docs.projectcalico.org/v3.19/manifests/calico.yaml
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+# kubectl apply -f https://docs.projectcalico.org/v3.19/manifests/calico.yaml
 
 
 #  kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
