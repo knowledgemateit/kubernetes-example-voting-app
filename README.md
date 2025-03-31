@@ -1,5 +1,6 @@
 Original : https://github.com/dockersamples/example-voting-app
 
+
 ![image](https://github.com/rajusw804/kubernetes-example-voting-app/assets/46264561/39cd54e8-fcae-4b15-97ff-043b3ba5422f)
 
 
@@ -28,3 +29,7 @@ A Node.js web app which shows the results of the voting in real time
 
 
 https://spacelift.io/blog/kubernetes-cheat-sheet
+
+svc
+https://spacelift.io/blog/kubernetes-service
+
