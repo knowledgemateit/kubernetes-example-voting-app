@@ -10,6 +10,8 @@ Original : https://github.com/dockersamples/example-voting-app
 
 # kubernetes-example-voting-app
 
+https://medium.com/@buddhikagaveen2021/deploying-voting-application-on-kubernetes-step-by-step-guide-part-02-85a34ae10f43
+
 https://devopscube.com/kube
 
 rnetes-architecture-explained/
