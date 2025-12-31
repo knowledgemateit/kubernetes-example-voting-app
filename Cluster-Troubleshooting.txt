@@ -1,0 +1,14 @@
+Cluster Troubleshooting: 
+systemctl restart kubelet
+systemctl status kubelet
+kubectl config get-contexts
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+sudo swapoff -a
+sudo kubeadm certs renew all
+systemctl restart kubelet
+   
+kubectl create clusterrolebinding admin-binding   --clusterrole=cluster-admin   --user=kubernetes-admin
