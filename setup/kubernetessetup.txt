@@ -6,7 +6,7 @@ Kubernetes Setup Using Kubeadm In AWS EC2 Ubuntu Servers Container-D As Runtime
 Prerequisite:
 =============
 
-2 - Ubuntu Serves  > 24.04
+2 - Ubuntu Serves  > 20.04
 
 1 - Master  (4GB RAM , 2 Core) t2.medium
 
