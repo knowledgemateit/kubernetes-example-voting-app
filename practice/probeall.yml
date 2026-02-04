@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: probe-demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: main-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
+        # 1. STARTUP PROBE: Give the app 30 seconds to boot up.
+        # While this is running, Readiness and Liveness are DISABLED.
+        startupProbe:
+          httpGet:
+            path: /
+            port: 80
+          failureThreshold: 15 # Try 15 times
+          periodSeconds: 2     # Every 2 seconds (30s total)
+
+        # 2. READINESS PROBE: Check if the app is ready for traffic.
+        # If it fails, the pod is hidden from the Service/LoadBalancer.
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+
+        # 3. LIVENESS PROBE: Check if the app has crashed or deadlocked.
+        # If it fails, Kubernetes RESTARTS the container.
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
