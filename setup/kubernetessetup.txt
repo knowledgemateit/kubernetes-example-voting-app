@@ -22,7 +22,11 @@ Note: Open Required Ports In AWS Security Groups. For now we will open All trafi
 
 sudo su
 
-hostname master     //   hostname agent
+ sudo hostnamectl set-hostname master                //       sudo hostnamectl set-hostname agent  
+
+or 
+
+   hostname master     //   hostname agent
 
 exit
 
