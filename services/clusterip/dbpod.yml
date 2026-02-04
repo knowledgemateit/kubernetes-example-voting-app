@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql  # This must match the Service selector
+  template:
+    metadata:
+      labels:
+        app: mysql # This is what the Service looks for
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:8.0
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "password" # Use Secrets in production!
+        ports:
+        - containerPort: 3306
