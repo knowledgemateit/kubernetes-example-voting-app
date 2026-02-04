@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-db
+spec:
+  type: ClusterIP
+  selector:
+    app: mysql        # Matches labels on your Database pods
+  ports:
+    - port: 3306      # Port the service listens on
+      targetPort: 3306 # Port the database is actually running on
